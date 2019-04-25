@@ -8,6 +8,7 @@ $bot->reply($text);
 $url = "https://apecpv.cmru.ac.th/projecterdi/adduser.php?id=".$id;
 $json = file_get_contents($url);
 $obj = json_decode($json);
+var_dump($obj);
 			foreach($obj as $key=>$value)
 			{
 				$resule = $value;
@@ -24,7 +25,7 @@ $obj = json_decode($json);
 				$arrayPostData['messages'][0]['text'] = "มีบางอย่างผิดพลาด";
 			}*/
 		    
-$bot->reply($arrayHeader,$arrayPostData);
+$bot->reply("Hello");
 ?>
 
 
