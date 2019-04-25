@@ -4,6 +4,7 @@ $message = $_REQUEST['msg'];
 
 $bot = new Linebot();
 //$text = $bot->getMessageText();
+echo $message;
 $bot->reply($message);
 
 ?>
