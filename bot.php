@@ -2,7 +2,7 @@
     //$accessToken = "40guoPwBoTNQPMcRR1UncgCJkQK041o5lpJRdAYLk4LGOelSA4EckvJLbCaPpi+JxLGefJDO/hM/bSfgAabn8tgVaK7GusRm7XVn8xwgO57G5CLhYr2YJwArFUXYyw2x/SoeMfsywaOh1eguIyQq4AdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
     $accessToken = "oKfXSEXkmDRNdxcUrkAJrvoJ49gdmeCM+MoMbpLXOKXicGis8P7YsIWT0f5BBYP9h3xjTVxRkUdyQGKr3rg6X5nRmSnIMEe7w9+oZ4fKO8d6rEZeiGruIfNwV5eFmsMoPHbb9fdbw92/nWN/jsPpPgdB04t89/1O/w1cDnyilFU=";
     
-	$content = file_get_contents('php://input');
+  	$content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
     
     $arrayHeader = array();
@@ -12,7 +12,7 @@
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
 
-#ตัวอย่าง Message Type "Text"
+/*#ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
@@ -41,7 +41,7 @@
 				$arrayPostData['messages'][0]['text'] = "สมัครสมาชิกแล้วจร้าาาาาา";
 			}else if($resule == "error"){
 				$arrayPostData['messages'][0]['text'] = "มีบางอย่างผิดพลาด";
-			}*/
+			}
 		    
 			replyMsg($arrayHeader,$arrayPostData);
 		}
@@ -117,8 +117,12 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่งของคุณ";
         replyMsg($arrayHeader,$arrayPostData);
-	}
-
+	}*/
+$msg = $_REQUEST['msg'];
+$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+$arrayPostData['messages'][0]['type'] = "text";
+$arrayPostData['messages'][0]['text'] = $msg;
+replyMsg($arrayHeader,$arrayPostData);
 function replyMsg($arrayHeader,$arrayPostData){
 	
         $strUrl = "https://api.line.me/v2/bot/message/reply";
