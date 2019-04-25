@@ -22,7 +22,7 @@
 	else if($message == "สมัครสมาชิก"){
 		
 		    $id = $arrayJson['events'][0]['source']['userId'];
-			$url = "apecpv.cmru.ac.th/projecterdi/adduser.php?id=".$id;
+			$url = "https://apecpv.cmru.ac.th/projecterdi/adduser.php?id=".$id;
 			$json = file_get_contents($url);
 			$obj = json_decode($json);
 			foreach($obj as $key=>$value)
