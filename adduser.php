@@ -22,6 +22,5 @@ if ($result->num_rows > 0) {
 } else {
    echo "no data"
 }
-echo json_encode($data);
 $conn->close();
 ?> 
