@@ -18,6 +18,8 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้า ^_^";
         replyMsg($arrayHeader,$arrayPostData);
+    } else if($message == "conn"){
+	    
     }
 	else if($message == "สมัครสมาชิก"){
 		
@@ -32,13 +34,14 @@
 		    
 			$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 			$arrayPostData['messages'][0]['type'] = "text";
-			if($resule == "no"){
+			$arrayPostData['messages'][0]['text'] = $resule;
+			/*if($resule == "no"){
 				$arrayPostData['messages'][0]['text'] = "ฉันจำได้ว่าคุณสมัครสมาชิกไปแล้วนะ";
 			}else if($resule == "ok"){
 				$arrayPostData['messages'][0]['text'] = "สมัครสมาชิกแล้วจร้าาาาาา";
 			}else if($resule == "error"){
 				$arrayPostData['messages'][0]['text'] = "มีบางอย่างผิดพลาด";
-			}
+			}*/
 		    
 			replyMsg($arrayHeader,$arrayPostData);
 		}
