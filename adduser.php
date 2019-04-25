@@ -1,5 +1,5 @@
 <?php
-$servername = "127.0.0.1";
+$servername = "https://apecpv.co.th:3307";
 $username = "root";
 $password = "Adicet@212";
 $dbname = "project_erdi";
