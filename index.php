@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__ . '/lineBot.php';
-$message = $_GET['msg'];
+$message = $_REQUEST['msg'];
 
 $bot = new Linebot();
-$text = $bot->getMessageText();
+//$text = $bot->getMessageText();
 $bot->reply($message);
 
 ?>
