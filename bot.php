@@ -8,7 +8,7 @@
 		$last_temp = $_GET['temp'];
 		$last_ph = $_GET['ph'];
 		$time = $_GET['time'];
-		$message = "ข้อมูลการพยากรณ์\nORP: ".$last_orp."\nTemp.: ".$last_temp."\nPH: ".$last_ph."\nข้อมูล ณ เวลา ".$time;
+		$message = "====ข้อมูลการพยากรณ์====\nORP: ".$last_orp."\nTemp.: ".$last_temp."\nPH: ".$last_ph."\nข้อมูล ณ เวลา ".$time;
 	} else if($case=="2"){
 		$norp = $_GET['norp'];
 		$lorp = $_GET['lorp'];
@@ -17,7 +17,7 @@
 		$nph = $_GET['nph'];
 		$lph = $_GET['lph'];
 		$time = $_GET['time'];
-		$message = "ข้อมูลมีความผิดปกติ\nข้อมูลก่อนหน้า=>\nORP: ".$lorp."\nTemp: ".$ltemp."\nPH: ".$lph."\nข้อมูลปัจจุบัน=>\nORP: ".$norp."\nTemp: ".$ntemp."\nPH: ".$nph."\nกรุณาตรวจสอบความผิดพลาด\nข้อมูล ณ เวลา ".$time;
+		$message = "====ข้อมูลมีความผิดปกติ====\nมีการเพิ่มขึ้นหรือลดลงของข้อมูลมากผิดปกติ\nข้อมูลก่อนหน้า=>\nORP: ".$lorp."\nTemp: ".$ltemp."\nPH: ".$lph."\nข้อมูลปัจจุบัน=>\nORP: ".$norp."\nTemp: ".$ntemp."\nPH: ".$nph."\nกรุณาตรวจสอบความผิดพลาด\nข้อมูล ณ เวลา ".$time;
 	}
 	sendx($user_id, $message);
 
