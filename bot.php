@@ -1,15 +1,24 @@
 <?php
  	$case = $_GET['case'];
-	$last_orp = $_GET['orp'];
-	$last_temp = $_GET['temp'];
-	$last_ph = $_GET['ph'];
-	$time = $_GET['time'];
+	
 	$user_id = "Ub5bd2d0b18e3e8f76cd94e897f05c654";
 
 	if($case == "1"){
+		$last_orp = $_GET['orp'];
+		$last_temp = $_GET['temp'];
+		$last_ph = $_GET['ph'];
+		$time = $_GET['time'];
 		$message = "ข้อมูลการพยากรณ์\nORP: ".$last_orp."\nTemp.: ".$last_temp."\nPH: ".$last_ph."\nข้อมูล ณ เวลา ".$time;
+	} else if($case=="2"){
+		$norp = $_GET['norp'];
+		$lorp = $_GET['lorp'];
+		$ntemp = $_GET['ntemp'];
+		$ltemp = $_GET['ltemp'];
+		$nph = $_GET['nph'];
+		$lph = $_GET['lph'];
+		$time = $_GET['time'];
+		$message = "ข้อมูลมีความผิดปกติ\nข้อมูลก่อนหน้า=>\nORP: ".$lorp."\nTemp: ".$ltemp."\nPH: ".$lph."\nข้อมูลปัจจุบัน=>\nORP: ".$norp."\nTemp: ".$ntemp."\nPH: ".$nph."\nกรุณาตรวจสอบความผิดพลาด\nข้อมูล ณ เวลา ".$time;
 	}
-
 	sendx($user_id, $message);
 
 function sendx($x, $msg){
