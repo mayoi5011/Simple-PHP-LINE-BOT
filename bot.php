@@ -3,9 +3,10 @@
 	$last_orp = $_GET['orp'];
 	$last_temp = $_GET['temp'];
 	$last_ph = $_GET['ph'];
+	$time = $_GET['time'];
 	$user_id = "Ub5bd2d0b18e3e8f76cd94e897f05c654";
 
-	$message = "ข้อมูลการพยากรณ์\nORP: ".$last_orp."\nTemp.: ".$last_temp."\nPH: ".$last_ph."\nข้อมูล ณ เวลา ".CURRENT_TIMESTAMP;
+	$message = "ข้อมูลการพยากรณ์\nORP: ".$last_orp."\nTemp.: ".$last_temp."\nPH: ".$last_ph."\nข้อมูล ณ เวลา ".$time;
 	sendx($user_id, $message);
 
 function sendx($x, $msg){
