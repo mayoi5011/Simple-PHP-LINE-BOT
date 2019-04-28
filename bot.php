@@ -8,7 +8,7 @@
 		$last_temp = $_GET['temp'];
 		$last_ph = $_GET['ph'];
 		$time = $_GET['time'];
-		$message = "====ข้อมูลการพยากรณ์====\nORP: ".$last_orp."\nTemp.: ".$last_temp."\nPH: ".$last_ph."\nข้อมูล ณ เวลา ".$time;
+		$message = "====ข้อมูลการพยากรณ์รายชั่วโมง====\nORP: ".$last_orp."\nTemp.: ".$last_temp."\nPH: ".$last_ph."\nข้อมูล ณ เวลา ".$time;
 	} else if($case=="2"){
 		$norp = $_GET['norp'];
 		$lorp = $_GET['lorp'];
